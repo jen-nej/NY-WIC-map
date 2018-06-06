@@ -56,3 +56,10 @@ ggmap(mdata,
       ylab = "Latitude",
       xlab = "Longitude") +
     geom_point(data=nylatlon, aes(x = lon, y = lat), color="blue", size=3, show.legend = FALSE)
+
+################################################################################
+### Write full file
+################################################################################
+
+write_csv(ny, "./out/NY WIC data.csv")
+
