@@ -25,14 +25,23 @@ ny <- read_html(nypage) %>%
     html_node(".widetable") %>%
     html_table(fill=TRUE)
 
+# Create full address with street, city, and zip
 ny$address <- paste0(ny$`Street Address`, ", ", ny$City, ", ", ny$Zip)
 
-# Geocode street addresses
+################################################################################
+### Geocode addresses
+################################################################################
+
+# Comment out API calls after the first download
 # nylatlon <- geocode(ny$address)
 # write_csv(nylatlon, "./out/NY WIC LatLon.csv")
 nylatlon <- read_csv("./out/NY WIC LatLon.csv")
 
 ny <- bind_cols(ny, nylatlon)
+
+################################################################################
+### Create map
+################################################################################
 
 # Get map data
 mdata <- get_map(location = "Syracuse, New York",
