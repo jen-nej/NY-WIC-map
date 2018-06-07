@@ -57,6 +57,8 @@ ggmap(mdata,
       xlab = "Longitude") +
     geom_point(data=nylatlon, aes(x = lon, y = lat), color="blue", size=3, show.legend = FALSE)
 
+# Can you create another with green dots?
+
 ################################################################################
 ### Write full file
 ################################################################################
