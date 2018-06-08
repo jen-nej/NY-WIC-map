@@ -57,12 +57,6 @@ ggmap(mdata,
       xlab = "Longitude") +
     geom_point(data=nylatlon, aes(x = lon, y = lat), color="blue", size=3, show.legend = FALSE)
 
-# Can you create another with green dots?
-ggmap(mdata,
-      extent = "device",
-      ylab = "Latitude",
-      xlab = "Longitude") +
-    geom_point(data=nylatlon, aes(x = lon, y = lat), color="green", size=2, show.legend = FALSE)
 
 
 
